@@ -26,7 +26,7 @@ KEY FEATURES:
 CONFIGURATION:
 -   Staffing levels, Queue Capacities, and Menu Costs are defined in the 'CONFIGURATION' 
     section at the top of the script.
--   Simulation runs for a 17-hour operating day (1020 minutes).
+-   Simulation runs for a 16-hour operating day (1020 minutes).
 
 USAGE:
 Run the script directly via Python interpreter.
