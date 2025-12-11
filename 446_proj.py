@@ -4,8 +4,37 @@ from collections import deque, defaultdict
 import copy
 
 """
-This program hosts the source code for running 
+Project: DES: Tim Hortons Operations
+File: 446_proj.py
 
+OVERVIEW:
+This script implements a discrete-event simulation (DES) to model the daily operations of a 
+Quick Service Restaurant (QSR). It simulates customer flow across three channels (Walk-in, 
+Drive-thru, Mobile) through ordering, kitchen production, and fulfillment phases. The goal 
+is to evaluate operational performance and net profit under stochastic demand.
+
+KEY FEATURES:
+1.  Multi-Channel Logic: Handles distinct behaviors for Walk-in (M/M/c), Drive-thru (M/M/1 
+    with Balking), and Mobile (Virtual Queue with Reneging).
+2.  Integrated Kitchen: Models parallel production lines (Urn, Espresso, Food) merging into 
+    a synchronized Packing station with blocking logic.
+3.  Stochastic Events: Simulates random machine breakdowns (Espresso Maintenance) and 
+    time-varying arrival rates (Peak/Lull periods).
+4.  Statistical Rigor: Uses Common Random Numbers (CRN) across 5 independent replications 
+    to calculate 95% Confidence Intervals for profit and wait times.
+
+CONFIGURATION:
+-   Staffing levels, Queue Capacities, and Menu Costs are defined in the 'CONFIGURATION' 
+    section at the top of the script.
+-   Simulation runs for a 17-hour operating day (1020 minutes).
+
+USAGE:
+Run the script directly via Python interpreter.
+
+OUTPUT:
+The script prints a detailed event log for each replication, followed by a final 
+'CROSS-REPLICATION SUMMARY' table containing Mean values and Confidence Intervals 
+for Net Profit, Throughput, and Tail Latency.
 """
 # 1. CONFIGURATION
 SIM_DURATION = 16 * 60
